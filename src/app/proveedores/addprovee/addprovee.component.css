@@ -1,0 +1,17 @@
+input.ng-invalid.ng-touched {
+    border-left: 5px solid #a94442;
+}
+
+input.ng-valid.ng-dirty {
+    border-left: 5px solid #42A948;
+}
+
+.check {
+    padding-left: 5px;
+    color: #42A948;
+}
+
+.uncheck {
+    padding-left: 5px;
+    color: #a94442;
+}

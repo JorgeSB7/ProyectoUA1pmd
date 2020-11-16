@@ -1,0 +1,32 @@
+<h1>Listado de Proveedores</h1>
+<a class="btn btn-primary float-md-right" routerLink="/addprovee">Añadir
+    nuevo proveedor</a>
+<br>
+<br>
+<div class="progress" *ngIf="!cargado">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+  </div>
+<table class="table table-bordered table-striped tabla" style="margin-top: 40px;">
+    <thead>
+        <tr class="filters">
+            <th>Nombre</th>
+            <th>Correo Electrónico</th>
+            <th>Telefono</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proveedor of proveedores">
+            <td>{{ proveedor.nombre }}</td>
+            <td><a href="mailto:{{ proveedor.email }}">{{ proveedor.email }}</a></td>
+            <td>{{ proveedor.telefono }}</td>
+            <td>
+                <button type="button" class="btn btn-success" routerLink="/editpro/{{proveedor.id$}}">Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminarProveedor(proveedor.id$)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
